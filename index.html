@@ -1,79 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-    <!DOCTYPE html>
-    <html>
-    
-    <head>
-        <title>Nav Bar</title>
-        <style>
-            body {
-                margin: 0;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-    
-            .topnav {
-                overflow: hidden;
-                background-color: #333;
-            }
-    
-            .topnav a {
-                float: left;
-                color: #1affa3;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-    
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-            }
-    
-            .topnav a.active {
-                background-color: #ffe066;
-                color: black;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#">About</a>
-            <a href="#">Menu</a>
-            <a href="#">FoodGallery</a>
-            <a href="#">Contact_Us</a>
-        </div>
-        <section>
-            <img class="mySlides" src="pic1.jpg" style="height:400px; width:500px;">
-            <img class="mySlides" src="pic2.jpg" style="height:350px; width:500px;">
-            <img class="mySlides" src="pic3.jpg" style="height:400px; width:450px;">
-            <img class="mySlides" src="pic4.jpg" style="height:350px; width:450px;">
-            <img class="mySlides" src="pic5.jpg" style="height:400px; width:500px;">
-            <img class="mySlides" src="pic6.jpg" style="height:400px; width:500px;">
-            <img class="mySlides" src="pic7.jpg" style="height:400px; width:450px;">
-            <img class="mySlides" src="pic8.jpg" style="height:400px; width:450px;">
-        </section>
-        <script>
-            var myIndex = 0;
-            carousel();
 
-            function carousel() {
-                var i;
-                var x = document.getElementsByClassName("mySlides");
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.display = "none";
-                }
-                myIndex++;
-                if (myIndex > x.length) { myIndex = 1 }
-                x[myIndex - 1].style.display = "block";
-                setTimeout(carousel, 3000);
+<head>
+    <title>Nav Bar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #1affa3;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #ffe066;
+            color: black;
+        }
+
+        .footer {
+            color: white;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#" onclick="showMenu()">Menu</a>
+        <a href="#" id="">FoodGallery</a>
+        <a href="#">Contact_Us</a>
+    </div>
+    <section id="FoodGallery">
+        <img class="mySlides" src="pic1.jpg" style="height:400px; width:500px;">
+        <img class="mySlides" src="pic2.jpg" style="height:350px; width:500px;">
+        <img class="mySlides" src="pic3.jpg" style="height:400px; width:450px;">
+        <img class="mySlides" src="pic4.jpg" style="height:350px; width:450px;">
+        <img class="mySlides" src="pic5.jpg" style="height:400px; width:500px;">
+        <img class="mySlides" src="pic6.jpg" style="height:400px; width:500px;">
+        <img class="mySlides" src="pic7.jpg" style="height:400px; width:450px;">
+        <img class="mySlides" src="pic8.jpg" style="height:400px; width:450px;">
+    </section>
+    <script>
+        var myIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
             }
-        </script>
-    </body>
-    
-    </html>
+            myIndex++;
+            if (myIndex > x.length) { myIndex = 1 }
+            x[myIndex - 1].style.display = "block";
+            setTimeout(carousel, 3000);
+        }
+        function showMenu() {
+            var menu = ["Burger", "Pizza", "Pasta", "Sandwich", "Noodles", "Fried Rice", "Manchurian", "Chowmein"];
+            var menuList = document.createElement("ul");
+            for (var i = 0; i < menu.length; i++) {
+                var menuItem = document.createElement("li");
+                menuItem.textContent = menu[i];
+                menuList.appendChild(menuItem);
+            }
+            document.body.appendChild(menuList);
+        }
+    </script>
+    <div class="footer">
+        <p>&copy; All rights reserved by Nataly Zawadi</p>
+    </div>
 </body>
+
 </html>
