@@ -55,7 +55,7 @@
         <a href="#" id="">FoodGallery</a>
         <a href="#">Contact_Us</a>
     </div>
-    <section id="FoodGallery">
+    <section>
         <img class="mySlides" src="pic1.jpg" style="height:400px; width:500px;">
         <img class="mySlides" src="pic2.jpg" style="height:350px; width:500px;">
         <img class="mySlides" src="pic3.jpg" style="height:400px; width:450px;">
@@ -79,16 +79,6 @@
             if (myIndex > x.length) { myIndex = 1 }
             x[myIndex - 1].style.display = "block";
             setTimeout(carousel, 3000);
-        }
-        function showMenu() {
-            var menu = ["Burger", "Pizza", "Pasta", "Sandwich", "Noodles", "Fried Rice", "Manchurian", "Chowmein"];
-            var menuList = document.createElement("ul");
-            for (var i = 0; i < menu.length; i++) {
-                var menuItem = document.createElement("li");
-                menuItem.textContent = menu[i];
-                menuList.appendChild(menuItem);
-            }
-            document.body.appendChild(menuList);
         }
     </script>
     <div class="footer">
